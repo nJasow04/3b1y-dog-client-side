@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "spot-robot-439104",
+  "private_key_id": "f752cc2d85c5284d90c8bf6a4176a8821278040e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCeV+w1FvPD2pFG\nTZoo4IPazmwhQbK8YK9IgFqMvhwFPzb0NaISt1gFLgkRC4Uf+vQMnxcy/tARnd1b\nf8m2/LQZi9PyO8fz+Cunppi/w2pYfpWUbpxlPURdKYuSFWTvLNnPSLpfIQe1E5O/\nokvaxu13aaEXvntuANjdINjy3OBn8GHASINWLfzcJZLpS8clpa2uCUk5Vmd4rVhU\n+IpVqGrXI6J77JVftA8piNf1PrnHSwIUUh2YQPXgFj/scEDa5eB19Y4QHZEmO0a1\nyHPeqZCFnqCH2VeYNid7HrZ9epeDz9ZDb4T2zWm8rIFAxotdfzUKnfXoAdGoarww\n2VJNChNNAgMBAAECggEAJR7vnTKYSx3+WMDwlwyrXKxv5QwF3uu7q/+LOtuGriQ3\nueCo8kJRPEWikoBk4S5v8FWLlsTt+nNL5Zt7qo5rmmGReoRRR/yyH0eLH8msMLrc\nTkPwHjvSvxRyR/kEBJ47IcEnEA4qRGUmihJ+PffMy+XTgkGBpjREovKEacsmQLdX\njELggEfNkYT+7IB8h3qrV3Lbs/w624rSWrhMoKgshcCPe6L7x+wIFxQmkfCPEZjS\nrIwk0bIo3NuzJdAldnZ+FAJpJhQH1RPkpuCOGhAOmtWyVTy9l4DOP/NLtE3jfZ//\nzk7i+evwUNHoDXIC5RbBCpYKKjZ0RK5amFO1w+u1AQKBgQDKk8eWSQzcoZ1frESH\nA8tfChxYJYhFddmfNbzebgPIqCKLOUcYdoil6eWplzI03sYK6smaIpfCNHXPY36t\nZ16fEcW0HUBtVUsQj2ELC0QhM1QIvs90peGkxmXP41wpNjApuWWN7ZbgjtlNwWHs\n5jezipwH7FKD9WEH56VFg9D/MQKBgQDIGd446YiZ+ZKoHceVT4VZVejBxo9NRS6I\n15uGKliAF/4BISW7HOR+/bedb9vZLwlChQ/9IW7oX4D7I+pBshzfxmt7sstQDYbx\nhY8dvCqSh99Vr9xRYWUCqPdbYNcvqTVYMHvp9ZHO4aypz5q7ij80spwTs9OWBz0r\naQX13WSm3QKBgG942GgzdHdoG3BNHDxrcxquNqCurokCa6k3aeHACib9llykPSIR\n/+nEhpNG1uLO/418W0mM5ZOBSJ7BcjC7ZA8GOZN+UTiYqcDIFS99mJToaMKTNRdM\nPJlubxHxW4J2BhS/p0ltRwv0r1EhK+CvYlFS4b9eZJ2mhilSZ9iTy4rRAoGBAKiI\nkRBiMXluKMWL/3OUfH3Xy6iZskykfiMnZYhE1jFdA8SzxHGqThFfZG0nr4VnBmeO\nZv8OT7lL5vifMUiP2Z3oItMWrgMIwaVelkG3ICw2YDZtXiT04Pyyj1PZZqRv4cwb\nWeKdwGb80E5d2rcmI0IhRS+bABSWmECdvjVseL/JAoGAa/uBObLL2v+JYUCWklA/\nmVrJfe3yCBZTDp15wXptvSxj6JMIZCCHSfzEpc0moDyjHBrmf/pMQ9dh13mocU41\noIHaBOYpCA39ux6Rn0Gz65qDq11GnsWzynd2gTMuLOk8WWpCViEuQUq3vwjgSkIR\nvS/Xo7lUcqS4qA/cJ20Iq3A=\n-----END PRIVATE KEY-----\n",
+  "client_email": "tts-service-account@spot-robot-439104.iam.gserviceaccount.com",
+  "client_id": "117147305362429150726",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tts-service-account%40spot-robot-439104.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
