@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #000;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+    font-size: 15px;
+    text-align: center;
+}
+
+#top-row, #bottom-row {
+    display: flex;
+    padding: 4px;
+    gap: 7px;
+}
+
+.card {
+    border-radius: 15px;
+    border: 1px solid #b0b0b0;
+    padding: 10px;
+    margin: 0;
+}
+
+#top-row {
+    height: 65%; /* Top row takes 50% of the screen height */
+}
+
+#bottom-row {
+    height: 35%; /* Bottom row takes the remaining 50% */
+}
+
+#live-feed {
+    flex: 3; /* 75% width for live-feed */
+    background-color: #111;
+    /* border: 1px solid #333; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#controls {
+    flex: 1; /* 25% width for controls */
+    background-color: #222;
+    /* border: 1px solid #333; */
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#send-audio, #record-audio {
+    flex: 1; /* 50% each for send-audio and record-audio */
+    background-color: #111;
+    /* border: 1px solid #333; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Buttons in controls */
+button {
+    background-color: #444;
+    color: white;
+    /* border: 1px solid #555; */
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
