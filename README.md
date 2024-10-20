@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# CalHacks 13 monorepo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> The spot for our code for running spotter on [Spot](https://bostondynamics.com/products/spot/)
 
-## Available Scripts
+**backend**: web server for multilingual, multimodal AI processing
+- REST API written in Python using Flask
+- [Poetry](https://python-poetry.org/) for dependency management
+- [Google Cloud Services](https://cloud.google.com/?hl=en)
+- [Gemini](https://gemini.google.com/)
+- [Groq](https://groq.ai/)
 
-In the project directory, you can run:
+**Root folder**: frontend that enables easy robot control and shows the robot's camera and data feed
+- serves data and object recognition from AI backend
+- makes requests to robot control backend based on keyboard and mouse inputs
+- [Bun](https://bun.sh/)
+- [React](https://react.dev/)
+- [shadcn-ui](https://ui.shadcn.com/) components
 
-### `npm start`
+**robot-control-server**: web server that enables remote control of the robot
+- REST API/gRPC service written in Python using Flask
+- Boston Dynamics SDK
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+----
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Press
 
-### `npm test`
+- Demo
+  - https://devpost.com/software/robot-z6y2gp
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+----
 
-### `npm run build`
+## Running the stack:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+First, clone this repo. If you don't have access to a Spot, you can still demo the entire frontend and AI part of the app locally, as long as you provide your Groq and GCP Client Json as an environment variables.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### backend
+1. install Poetry
+2. `poetry install`
+3. `poetry run dev` to start the backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### frontend
+1. npm i
+2. npm run dev
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### robot server
+1. connect to Spot's wifi network
+2. run `python3 python/examples/wasd_server/app.py` and replace the hostname `192.168.80.3` with your Spot's IP
+3. enter the `admin` username & password, or the equivalent credentials for your Spot
+4. send requests to control endpoints manually or via the frontend
