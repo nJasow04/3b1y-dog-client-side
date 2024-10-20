@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package imagestream;
+
+service ImageStream {
+  // Client sends an image to the server
+  rpc SendImage (ImageRequest) returns (ImageResponse);
+}
+
+message ImageRequest {
+  bytes image_data = 1;
+}
+
+message ImageResponse {
+  string message = 1;
+}
