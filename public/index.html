@@ -5,31 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bruno Client Port</title>
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .container {
+          text-align: center;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      button {
+          margin: 5px;
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+      }
+      #battery-status {
+          margin-top: 20px;
+          font-weight: bold;
+      }
+    </style>
   </head>
   <body>
-    <h1>Bruno Client Port <span></span></h1>
+    <h1>Bruno Client Port <span id="session-confirmation">•</span></h1>
     <div id="top-row">
       <div id="live-feed" class="card">
         <h2>Live Feed</h2>
+        <p>Front camera from Spot</p>
         <video id="video-stream" autoplay></video> <!-- Video stream -->
       </div>
       <div id="controls" class="card">
         <h2>Controls</h2>
-        <p>
-          Move Bruno in real-time with your keyboard and/or these buttons.
-        </p>
+        <p>Move Bruno in real-time with your keyboard and/or these buttons.</p>
+          <!-- <div id="control-buttons">
+            <div id="forward-button" class="control-button">↑</div>
+            <div id="strafe-left-button" class="control-button">←</div>
+            <div id="strafe-right-button" class="control-button">→</div>
+            <div id="back-button" class="control-button">↓</div>
+            <div id="turn-left-button" class="control-button"> Turn Left (Q) </div>
+            <div id="turn-right-button" class="control-button"> Turn Right (E)</div>
+            <div id="stand-button" class="control-button">Sit</div>
+            <div id="sit-button" class="control-button">Stand</div>
+            <div id="battery-change-button" class="control-button">Battery Change</div>
+            <div id="self-right-button" class="control-button">Self Right</div>
+            <div id="get-battery-status-button" class="control-button">Get Battery Status</div>
+        </div> -->
+        <div class="container">
+            <h2 style="text-align:center;">Spot Robot Control</h2>
+            <div>
+                <button onclick="sendCommand('move/forward')">Forward</button>
+                <button onclick="sendCommand('move/backward')">Backward</button>
+            </div>
+            <div>
+                <button onclick="sendCommand('move/left')">Left</button>
+                <button onclick="sendCommand('move/right')">Right</button>
+            </div>
+            <div>
+                <button onclick="sendCommand('turn/left')">Turn Left</button>
+                <button onclick="sendCommand('turn/right')">Turn Right</button>
+            </div>
+            <div>
+                <button onclick="sendCommand('sit')">Sit</button>
+                <button onclick="sendCommand('stand')">Stand</button>
+            </div>
+            <div>
+                <button onclick="sendCommand('battery-change')">
+                    Battery Change
+                </button>
+                <button onclick="sendCommand('self-right')">Self Right</button>
+            </div>
+            <div>
+                <button onclick="getBatteryStatus()">Get Battery Status</button>
+            </div>
+            <div>
+                <button onclick="sendCommand('test')">test</button>
+            </div>
+            <div id="battery-status"></div>
+        </div>
       </div>
     </div>
     <div id="bottom-row">
       <div id="send-audio" class="card">
-        <h2>Send Audio to Bruno</h2>
-
+        <h2 class="centredh2">Start Bruno</h2>
+        <div id="record-button"><i class="fa-solid fa-microphone"></i> Stream </div>
       </div>
-      <div id="record-audio" class="card">
-        <h2>Listen In</h2>
+      <!-- <div id="record-audio" class="card">
+        <h2 class="centredh2">Listen In</h2>
 
-      </div>
+      </div> -->
     </div>
-
+    <script>
+      function sendCommand(endpoint) {
+          fetch(`http://localhost:5001/${endpoint}`, {
+              method: "GET",
+          })
+              .then((response) => response.json())
+              .then((data) => {
+                  console.log(data);
+                  alert(data.status);
+              })
+              .catch((error) => {
+                  console.error("Error:", error);
+                  alert("Error: " + error);
+              });
+      }
+      function getBatteryStatus() {
+          fetch("http://localhost:5001/battery", {
+              method: "GET",
+          })
+              .then((response) => response.json())
+              .then((data) => {
+                  console.log(data);
+                  document.getElementById("battery-status").innerText =
+                      data;
+              })
+              .catch((error) => {
+                  console.error("Error:", error);
+                  alert("Error: " + error);
+              });
+      }
+  </script>
   </body>
+  <script src="https://kit.fontawesome.com/9ea4d88ff5.js" crossorigin="anonymous"></script>
 </html>
